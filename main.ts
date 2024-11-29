@@ -1,26 +1,66 @@
+let random = 0
 /**
- * Giá trị Analog của cảm biến
+ * Giá trị của "xúc xắc"
  */
-/**
- * Giá trị (%) của cảm biến
- */
-let dataPercent = 0
-let dataAnalog = 0
-// Bật cổng Serial
-serial.setBaudRate(BaudRate.BaudRate115200)
-// Xóa toàn bộ nội dung trên LCD (nếu có)
-lcd.clearScreen()
-// Cho hiển thị tiêu đề trước
-lcd.displayText("Light Detector", 1, 1)
-lcd.displayText("[LDR] " + lcd.displaySymbol(lcd.Symbols.sym02), 1, 2)
-basic.forever(function () {
-    // Đọc giá trị Analog của cảm biến và đổi ra thang (%)
-    dataAnalog = pins.analogReadPin(AnalogPin.P0)
-    dataPercent = Math.round(Math.map(dataAnalog, 0, 1023, 100, 0))
-    // Cho hiển thị giá trị (%) của cảm biến trên LCD
-    lcd.displayText("" + dataPercent + "%  ", 9, 2)
-    // Gửi giá trị (%) của cảm biến lên Serial
-    serial.writeLine("" + (dataPercent))
-    // Dừng 0.5s
-    basic.pause(500)
+// Khi nhấn nút (P0) sẽ đổ "xúc xắc"
+input.onPinPressed(TouchPin.P0, function () {
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    // Lấy một số ngẫu nhiên trong khoảng 1 đến 6
+    random = randint(1, 6)
+    // Cho hiển thị mặt "xúc xắc" theo số tương ứng
+    if (random == 1) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+    } else if (random == 2) {
+        basic.showLeds(`
+            . . # . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . # . .
+            `)
+    } else if (random == 3) {
+        basic.showLeds(`
+            . . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . .
+            `)
+    } else if (random == 4) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . . . #
+            `)
+    } else if (random == 5) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . #
+            `)
+    } else if (random == 6) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            # . . . #
+            . . . . .
+            # . . . #
+            `)
+    }
 })
