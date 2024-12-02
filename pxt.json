@@ -1,5 +1,5 @@
 {
-    "name": "[MakeCode] MKE-S02 LDR Light Sensor",
+    "name": "[MakeCode] MKE-M02 Push Button Tact Switch Module",
     "description": "",
     "dependencies": {
         "core": "*",

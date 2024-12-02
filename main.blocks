@@ -1,6 +1,6 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="|u,-4?F).:}NO30c=b]J">random</variable></variables><comment id="aS+ML2,.N(ME7a(X+zZU" x="513.125" y="20" w="210" h="120">
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="|u,-4?F).:}NO30c=b]J">random</variable></variables><comment id="aS+ML2,.N(ME7a(X+zZU" x="493" y="0" w="210" h="120">
 Giá trị của "xúc xắc"
-</comment><block type="device_pin_event" id="u7uFP7:o4Uyt}Bl$V`2*" x="20" y="20"><field name="name">TouchPin.P0</field><comment pinned="false" h="80" w="160">Khi nhấn nút (P0) sẽ đổ "xúc xắc"</comment><statement name="HANDLER"><block type="device_show_leds" id="/Lb$78pZ_SaZYQ{b7[C?"><field name="LEDS">`
+</comment><block type="device_pin_event" id="u7uFP7:o4Uyt}Bl$V`2*" x="0" y="0"><field name="name">TouchPin.P0</field><comment pinned="false" h="80" w="160">Khi nhấn nút (P0) sẽ đổ "xúc xắc"</comment><statement name="HANDLER"><block type="device_show_leds" id="/Lb$78pZ_SaZYQ{b7[C?"><field name="LEDS">`
         . . . . . 
         . . . . . 
         . . . . . 
